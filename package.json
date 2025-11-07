@@ -1,0 +1,57 @@
+{
+  "name": "finance-insurance-claims-portal-ui-testing",
+  "version": "1.0.0",
+  "description": "UI automation testing framework for insurance claims portal using Playwright",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:headed": "npx playwright test --headed",
+    "test:debug": "npx playwright test --debug",
+    "test:chromium": "npx playwright test --project=chromium",
+    "test:firefox": "npx playwright test --project=firefox", 
+    "test:webkit": "npx playwright test --project=webkit",
+    "test:mobile": "npx playwright test --project=mobile-chrome",
+    "test:claim-submission": "npx playwright test tests/claim-submission",
+    "test:processing": "npx playwright test tests/claim-processing",
+    "test:adjuster": "npx playwright test tests/adjuster-workflows",
+    "test:compliance": "npx playwright test tests/compliance",
+    "report": "npx playwright show-report",
+    "allure:generate": "allure generate allure-results --clean",
+    "allure:serve": "allure serve allure-results",
+    "install:browsers": "npx playwright install"
+  },
+  "keywords": [
+    "playwright",
+    "typescript",
+    "ui-testing",
+    "insurance",
+    "claims",
+    "automation",
+    "finance"
+  ],
+  "author": "pomo03606",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.40.0",
+    "@types/node": "^20.9.0",
+    "typescript": "^5.2.2",
+    "allure-playwright": "^2.10.0",
+    "dotenv": "^16.3.1"
+  },
+  "dependencies": {
+    "faker": "^6.6.6",
+    "moment": "^2.29.4"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pomo03606/finance-insurance-claims-portal-ui-testing.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pomo03606/finance-insurance-claims-portal-ui-testing/issues"
+  },
+  "homepage": "https://github.com/pomo03606/finance-insurance-claims-portal-ui-testing#readme"
+}
