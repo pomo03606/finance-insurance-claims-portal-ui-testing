@@ -1,0 +1,110 @@
+{
+  "testConfig": {
+    "environment": "test",
+    "version": "1.0.0",
+    "description": "Insurance Claims Portal UI Test Configuration"
+  },
+  "application": {
+    "baseUrl": "https://claims-portal.insurancecorp.com",
+    "loginPath": "/login",
+    "dashboardPath": "/dashboard", 
+    "claimsPath": "/claims",
+    "timeout": 30000
+  },
+  "users": {
+    "claimant": {
+      "username": "test.claimant@email.com",
+      "password": "Claimant123!",
+      "firstName": "John",
+      "lastName": "Claimant",
+      "policyNumber": "POL123456789"
+    },
+    "adjuster": {
+      "username": "test.adjuster@insurancecorp.com", 
+      "password": "Adjuster123!",
+      "firstName": "Jane",
+      "lastName": "Adjuster",
+      "employeeId": "ADJ001"
+    },
+    "manager": {
+      "username": "test.manager@insurancecorp.com",
+      "password": "Manager123!",
+      "firstName": "Bob",
+      "lastName": "Manager",
+      "department": "Claims"
+    }
+  },
+  "testData": {
+    "claims": {
+      "auto": {
+        "type": "Auto",
+        "incidentDate": "2023-12-01",
+        "amount": 5000.00,
+        "description": "Rear-end collision at intersection",
+        "vehicleYear": 2020,
+        "vehicleMake": "Toyota",
+        "vehicleModel": "Camry"
+      },
+      "home": {
+        "type": "Property",
+        "incidentDate": "2023-11-15", 
+        "amount": 15000.00,
+        "description": "Water damage from burst pipe",
+        "propertyAddress": "123 Main St, Anytown, ST 12345"
+      },
+      "health": {
+        "type": "Health",
+        "incidentDate": "2023-10-20",
+        "amount": 2500.00,
+        "description": "Emergency room visit",
+        "provider": "City General Hospital",
+        "diagnosis": "Broken arm"
+      }
+    }
+  },
+  "browser": {
+    "name": "chromium",
+    "headless": false,
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "slowMo": 0,
+    "timeout": 30000
+  },
+  "screenshots": {
+    "mode": "only-on-failure",
+    "fullPage": true,
+    "path": "./test-results/screenshots"
+  },
+  "video": {
+    "mode": "retain-on-failure",
+    "path": "./test-results/videos"
+  },
+  "reporting": {
+    "html": {
+      "open": "never",
+      "outputFolder": "./test-results/html-report"
+    },
+    "junit": {
+      "outputFile": "./test-results/junit-report.xml"
+    }
+  },
+  "database": {
+    "connection": {
+      "host": "localhost",
+      "port": 5432,
+      "database": "claims_test",
+      "username": "claims_test_user",
+      "password": "test123"
+    }
+  },
+  "api": {
+    "baseUrl": "https://api.insurancecorp.com",
+    "timeout": 10000,
+    "headers": {
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    }
+  }
+}
